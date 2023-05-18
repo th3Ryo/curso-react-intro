@@ -4,6 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      //PARA INGRESAR LA ETIQUETA ES DEBAJO DE AL App
+      <ListaPorHacer/>
+      <ListaPorHacer/>
+      <ListaPorHacer/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -15,11 +19,29 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Aprender React
         </a>
       </header>
     </div>
   );
 }
 
+function ListaPorHacer () {
+  return (
+  
+    <li>
+    <span>
+      v
+    </span>
+    <p>
+      texto por hacer
+    </p>
+    <span>
+      X
+    </span>
+  </li>
+  )
+}
+
 export default App;
+// se podria tambien asi export default ListaPorHacer;
