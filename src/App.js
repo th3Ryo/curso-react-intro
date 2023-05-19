@@ -1,46 +1,37 @@
-import logo from './platzi.webp';
+import React from 'react'
+import { ContenedorTablero } from './ContenedorTablero';
+import { ContenedorPorHacer } from './ContenedorPorHacer';
+import { BuscadorTareas } from './BuscadorTareas';
+import { ContenedorTarea } from './ContenedorTarea';
+import {ContenedorBoton } from './ContenedorBoton'; 
 import './App.css';
+/* rfce */
+/* ver atajos control+ k control +s */
+
+const renderArray = [
+  {texto: "tarea", completada:false},
+  {texto: "tarea2", completada:false},
+  {texto: "tarea3", completada:false},
+  {texto: "tarea4", completada:false},
+]
 
 function App() {
   return (
-    <div className="App">
-      //PARA INGRESAR LA ETIQUETA ES DEBAJO DE AL App
-      <ListaPorHacer/>
-      <ListaPorHacer/>
-      <ListaPorHacer/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita el archivo <code>src/App.js</code> y guarda para recargar.
-        </p>
-        <a
-          className="App-link"
-          href="https://platzi.com/reactjs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Aprender React
-        </a>
-      </header>
-    </div>
+    /* para que no salga tanto div <div className="App"> se cambia la etiqueta por react <React.Fragment> */
+    <React.Fragment>
+      <ContenedorTablero className="App" total={22} parcial={2} />
+        <ContenedorPorHacer> 
+          <BuscadorTareas/>
+            {/* <ContenedorTarea/> sin array*/}
+           {/*  renderizar un array  */}
+            {renderArray.map (todo => (
+              /* este tiene de funcionanr como identificador key={todo.texto} y este se va a enviar como promps a  contenedor tarea textoTarea={todo.texto} */
+              <ContenedorTarea key={todo.texto} textoTarea={todo.texto}/>
+            ))}
+        <ContenedorBoton/>
+        </ContenedorPorHacer>
+    </React.Fragment>
   );
-}
-
-function ListaPorHacer () {
-  return (
-  
-    <li>
-    <span>
-      v
-    </span>
-    <p>
-      texto por hacer
-    </p>
-    <span>
-      X
-    </span>
-  </li>
-  )
 }
 
 export default App;
