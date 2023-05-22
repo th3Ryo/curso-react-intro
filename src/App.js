@@ -20,16 +20,25 @@ function App() {
     /* para que no salga tanto div <div className="App"> se cambia la etiqueta por react <React.Fragment> */
     <React.Fragment>
       <ContenedorTablero className="App" total={22} parcial={2} />
-        <ContenedorPorHacer> 
+        <section className="contenedor">
           <BuscadorTareas/>
+          <ContenedorBoton/>
+
+        </section>
+        
+        <section className="contenedor">
+
+        <ContenedorPorHacer> 
             {/* <ContenedorTarea/> sin array*/}
            {/*  renderizar un array  */}
             {renderArray.map (todo => (
               /* este tiene de funcionanr como identificador key={todo.texto} y este se va a enviar como promps a  contenedor tarea textoTarea={todo.texto} */
-              <ContenedorTarea key={todo.texto} textoTarea={todo.texto}/>
-            ))}
-        <ContenedorBoton/>
+              <ContenedorTarea key={todo.texto} textoTarea={todo.texto} textoEstado={todo.completada}/>
+              ))}
         </ContenedorPorHacer>
+
+        
+        </section>
     </React.Fragment>
   );
 }
