@@ -1,0 +1,54 @@
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #9EC2C0;
+    margin: 1.3rem;
+    font-size: 1.6rem;
+
+    border-radius: 1rem;
+}
+
+li:hover {
+    width: 100%;
+}
+
+
+
+.icono {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.icono-continuar:hover {
+    color: green;
+}
+
+.icono-eliminar {
+    position: relative;
+    top: -48px;
+    right: 0;
+}
+
+.icono-eliminar:hover {
+    color: red;
+}
+
+
+
+@media (max-width: 376px) {
+    li {
+        width: 80vw;      
+    }
+    li:hover {
+        width: 90%;
+    }
+  }

@@ -1,0 +1,20 @@
+.barraBuscadora {
+    min-height: 2rem;
+    width: 80%;
+    height: auto;
+    border-radius: 2rem;
+    color: black;
+    border: solid 2px;
+    border-color: white;
+    
+    font-size: 30px;
+    text-align: center;
+
+
+}
+@media (max-width: 376px) {
+  .barraBuscadora {
+    margin: 0px 0px 1rem 0px;
+    
+  }
+}

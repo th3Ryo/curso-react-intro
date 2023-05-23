@@ -1,0 +1,22 @@
+.botonCrear {
+    flex-direction: column;
+    align-items: center;
+    background-color: #9EC2C0;
+    border-radius: 50%;
+    padding: 0%;
+    border: none;
+    cursor: pointer;
+
+}
+
+.imagenBoton {
+    width: 4rem;
+    height: 4rem;
+}
+
+.botonCrear:hover {
+    
+    background-color: #6EA0AC;
+    
+
+}
