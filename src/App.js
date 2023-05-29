@@ -53,11 +53,11 @@ function App() {
   );
   
 
-  const buscadorUndefined = tarea.filter((tarea) => tarea.completada === undefined);
+  const tareasUndefined = buscadorTareas.filter((tarea) => tarea.completada === undefined);
 
-  const tareasHaciendo = tarea.filter((tarea) => tarea.completada === false);
+  const tareasHaciendo = buscadorTareas.filter((tarea) => tarea.completada === false);
 
-  const tareasHechas = tarea.filter((tarea) => tarea.completada === true);
+  const tareasHechas = buscadorTareas.filter((tarea) => tarea.completada === true);
 
 
   /**
@@ -120,7 +120,7 @@ function App() {
 
         <ContenedorPorHacer  > 
 
-          {buscadorUndefined.map((todo) => (
+          {tareasUndefined.map((todo) => (
           <ContenedorTarea
                 key={todo.texto}
                 textoTarea={todo.texto}

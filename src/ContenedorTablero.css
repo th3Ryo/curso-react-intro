@@ -44,6 +44,9 @@ section div:nth-child(1) {
 section div:nth-child(2) {
   background-color: #548FA2;
 }
+section div:nth-child(3) {
+  background-color: #3E7F98;
+}
 
 h2 span{
   color: #6EA0AC;
