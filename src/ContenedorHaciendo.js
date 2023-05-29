@@ -1,8 +1,6 @@
 import React from 'react'
-import './ContenedorPorHacer.css'
 
-//se coloca los elementos dentro de compoennte
-function ContenedorPorHacer({children}) {
+function ContenedorHaciendo({children}) {
   return (
     <div className="contenedor">
       <ul className='lista'>
@@ -13,4 +11,4 @@ function ContenedorPorHacer({children}) {
   )
 }
 
-export {ContenedorPorHacer}
+export { ContenedorHaciendo };

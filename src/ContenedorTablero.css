@@ -18,21 +18,31 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 33vw;
+    width: 31vw;
+    margin: 2rem;
+
 }
 
-.contenedor:first-of-type{
+section:first-of-type{
   
   margin: 1rem;
   
 }
 
-.contenedor:last-of-type{
-    background-color: #6EA0AC;
-    
-    border-radius: 10%/10%;
-    margin: 0px 0px 1rem 0px;
+section:last-of-type{
+  display: flex;
+  flex-direction: row;
+  background-color: #17546c;
+  border-radius: 5%/5%;
+  margin: 0px 0px 1rem 0px;
 
+}
+section div:nth-child(1) {
+  background-color: #6EA0AC;
+}
+
+section div:nth-child(2) {
+  background-color: #548FA2;
 }
 
 h2 span{

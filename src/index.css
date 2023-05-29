@@ -18,8 +18,10 @@ body {
   --EnTransito: #30C5FF;
   --Completado: #35D477 ;
   --st0 : #9EC2C0;
-	--st2 : #3E7F98;
 	--st1 : #6EA0AC;
+	--st2 : #548FA2;
+	--st3 : #3E7F98;
+	--st4 : #17546c;
 
 /*   background: linear-gradient(to right, var(--Pausado), var(--EnTransito), var(--Completado));
 

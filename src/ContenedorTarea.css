@@ -36,6 +36,8 @@ li:hover {
     position: relative;
     top: -48px;
     right: 0;
+    width: 36px;
+    height: 36px;
 }
 
 .icono-eliminar:hover {

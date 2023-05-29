@@ -3,8 +3,7 @@ import './ContenedorBoton.css'
 
 
 function ContenedorBoton() {
-  
-  let [click,setClick] = React.useState(0)
+  let [click,setClick] = React.useState(0);
   console.log("estes el click "+ click)
   return (
     <button 
