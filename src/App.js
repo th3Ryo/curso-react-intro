@@ -12,7 +12,7 @@ import './App.css';
 /* rfce */
 /* ver atajos control+ k control +s */
 
-const tarreaArray = [
+/* const tarreaArray = [
   {texto: "tarea", completada:true},
   {texto: "tarea2", completada:undefined},
   {texto: "tarea3", completada:false},
@@ -21,11 +21,34 @@ const tarreaArray = [
   {texto: "tarea6", completada:undefined},
 ]
 
+localStorage.setItem('planFlow_v1', JSON.stringify(tarreaArray)) */
+
+
+
 function App() {
+  /**
+   * !localstorage 
+   * */
+  //verificar que existe
+  const localStorageTareas = localStorage.getItem('planFlow_v1');
+
+  //crea array vacio para que no se rompa la app
+  let parsedTareas = []
+  //verifica que no este vacia
+  if (!localStorageTareas) {
+    //crea un array vacio en caso de que este vacio
+    localStorage.setItem('planFlow_v1', JSON.stringify ([]));
+    parsedTareas = []
+  } else {
+    //en caso de que hayan datos de antes los combierte en un array
+    parsedTareas = JSON.parse(localStorageTareas)
+  }
+
+
   /**
    * !tareas 
    * */
-  const [tarea, setTarea] = React.useState(tarreaArray);
+  const [tarea, setTarea] = React.useState(parsedTareas);
   const [valorBuscador, setValorBuscador ] = React.useState('');
   /**
    * ! encontrar completadas y totales 
@@ -59,6 +82,14 @@ function App() {
 
   const tareasHechas = buscadorTareas.filter((tarea) => tarea.completada === true);
 
+    /**
+   * !guardar estados en local storage
+   * */
+  const guardarTareas = (Tareas) => {
+    localStorage.setItem('planFlow_v1',JSON.stringify (Tareas));
+    setTarea(Tareas)
+  };
+
 
   /**
    * !estados completados 
@@ -69,8 +100,22 @@ function App() {
     const tareaIndex=  nuevaTarea.findIndex (
       (tarea) => tarea.texto === texto
     )                                      /* esta es para que permita agregar el atributo completadao quitarlo si doy click */
-    nuevaTarea[tareaIndex].completada = !nuevaTarea[tareaIndex].completada
-    setTarea(nuevaTarea)
+    /* nuevaTarea[tareaIndex].completada = !nuevaTarea[tareaIndex].completada */
+    if (nuevaTarea[tareaIndex].completada === undefined) {
+      console.log("click undefined")
+      nuevaTarea[tareaIndex].completada = false;
+      return guardarTareas(nuevaTarea)
+
+
+
+    }
+    if (nuevaTarea[tareaIndex].completada === false) {
+      console.log("click false")
+      nuevaTarea[tareaIndex].completada = !nuevaTarea[tareaIndex].completada
+      return guardarTareas(nuevaTarea)
+
+    }
+
   }
   /**
    * !estados eliminados 
@@ -82,22 +127,10 @@ function App() {
       (tarea) => tarea.texto === texto
     )
     nuevaTarea.splice(tareaIndex,1)
-    setTarea(nuevaTarea)
+    guardarTareas(nuevaTarea)
   }
 
-  
-  
-  
 
-  /* no funciono
-    const buscadorUndefined = tarea.filter((texto) => {
-    const nuevaTarea = [...tarea];
-    const tareaIndex = nuevaTarea.findIndex(
-      (tarea) => tarea.texto === texto);
-    nuevaTarea[tareaIndex].completada = undefined;
-    setTarea(nuevaTarea);
-  }); */
-  
 
   
  

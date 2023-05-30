@@ -12,7 +12,14 @@ function ContenedorTablero( {total, parcial}) {
           <img src={imagen} alt="Logo de la página" />
         </div>
         <h1>Bienvenido al Tablero</h1>
-        <h2> <span>{parcial}</span> Tareas completadas de <span>{total}</span> totales</h2>
+        {total === parcial ? (
+        <h2>Felicidades, todas las tareas están terminadas</h2>
+      ) : (
+        <h2>
+          <span>{parcial}</span> Tareas completadas de <span>{total}</span> totales
+        </h2>
+      )}
+        
     </header>
     
   )
