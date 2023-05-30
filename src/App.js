@@ -9,6 +9,7 @@ import { ContenedorTarea } from './ContenedorTarea';
 import {ContenedorBoton } from './ContenedorBoton'; 
 
 import './App.css';
+import react from 'react';
 /* rfce */
 /* ver atajos control+ k control +s */
 
@@ -22,33 +23,45 @@ import './App.css';
 ]
 
 localStorage.setItem('planFlow_v1', JSON.stringify(tarreaArray)) */
-
-
-
-function App() {
-  /**
+function useLocalStorage (itemName, initialValue) {
+   /**
    * !localstorage 
    * */
   //verificar que existe
-  const localStorageTareas = localStorage.getItem('planFlow_v1');
+  const localStorageItems = localStorage.getItem(itemName);
 
   //crea array vacio para que no se rompa la app
-  let parsedTareas = []
+  let parsedItem;
   //verifica que no este vacia
-  if (!localStorageTareas) {
+  if (!localStorageItems) {
     //crea un array vacio en caso de que este vacio
-    localStorage.setItem('planFlow_v1', JSON.stringify ([]));
-    parsedTareas = []
+    localStorage.setItem(itemName, JSON.stringify (initialValue));
+    parsedItem = initialValue
   } else {
     //en caso de que hayan datos de antes los combierte en un array
-    parsedTareas = JSON.parse(localStorageTareas)
+    parsedItem = JSON.parse(localStorageItems)
   }
 
+  const [item, setItem] = react.useState (parsedItem);
+
+   /**
+   * !guardar estados en local storage
+   * */
+   const guardarItem = (newItem) => {
+    localStorage.setItem(itemName,JSON.stringify (newItem));
+    setItem(newItem)
+  };
+  return  [item, guardarItem];
+}
+
+
+function App() {
+ 
 
   /**
    * !tareas 
    * */
-  const [tarea, setTarea] = React.useState(parsedTareas);
+  const [tarea, guardarTareas] = useLocalStorage('planFlow_v1', []);
   const [valorBuscador, setValorBuscador ] = React.useState('');
   /**
    * ! encontrar completadas y totales 
@@ -81,15 +94,6 @@ function App() {
   const tareasHaciendo = buscadorTareas.filter((tarea) => tarea.completada === false);
 
   const tareasHechas = buscadorTareas.filter((tarea) => tarea.completada === true);
-
-    /**
-   * !guardar estados en local storage
-   * */
-  const guardarTareas = (Tareas) => {
-    localStorage.setItem('planFlow_v1',JSON.stringify (Tareas));
-    setTarea(Tareas)
-  };
-
 
   /**
    * !estados completados 
