@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContenedorTablero.css';
-import imagen from './img/logopagina.png';
+import imagen from './logopagina.png';
 
 
 function ContenedorTablero( {total, parcial}) {
