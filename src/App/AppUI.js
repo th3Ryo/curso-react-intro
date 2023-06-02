@@ -36,14 +36,16 @@ function AppUI() {
   return (
     
     <React.Fragment>
-      //se mete el Tarea donde se piden los valores
-      <ContenedorTablero className="App" total={total} parcial={parcial} />
+{/*       //se mete el Tarea donde se piden los valores
+ */}      <ContenedorTablero className="App" total={total} parcial={parcial} />
       <section className="contenedor">
         <BuscadorTareas
           valorBuscador={valorBuscador}
           setValorBuscador={setValorBuscador}
         />
-        <ContenedorBoton />
+        <ContenedorBoton 
+          setAbrirModalTarea={setAbrirModalTarea}
+        />
         {abrirModalTarea && (
           <Modal>
           el modal esta aki

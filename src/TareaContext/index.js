@@ -15,7 +15,7 @@ function TareaProvider ({children}) {
     error,
   } = useLocalStorage('planFlow_v1', []);
   const [valorBuscador, setValorBuscador ] = React.useState('');
-  const [abrirModalTarea, setAbrirModalTarea ] = React.useState(true);
+  const [abrirModalTarea, setAbrirModalTarea ] = React.useState(false);
   /**
    * ! encontrar completadas y totales 
    * */
