@@ -1,7 +1,7 @@
 h1 {
-    font-size: 48px;
+    font-size: 36px;
     margin: 0;
-    padding: 48px;
+    padding: 24px;
     text-align: center;
 
 }
@@ -9,7 +9,7 @@ h1 {
 h2 {
     font-size: 24px;
     margin: 0;
-    padding: 36px;
+    padding: 12px;
     text-align: center;
 
 }
@@ -18,7 +18,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 31vw;
+    width: 28vw;
     margin: 2rem;
 
 }

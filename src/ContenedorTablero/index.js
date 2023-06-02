@@ -1,10 +1,15 @@
 import React from 'react';
 import './ContenedorTablero.css';
 import imagen from './logopagina.png';
+import { TareaContext } from '../TareaContext';
 
 
-function ContenedorTablero( {total, parcial}) {
+function ContenedorTablero() {
   /* props = { patito, peces, etc } */
+  const {
+    parcial,
+    total,
+  } = React.useContext(TareaContext);
 
   return (
     <header>
@@ -25,4 +30,4 @@ function ContenedorTablero( {total, parcial}) {
   )
 }
 
-export {ContenedorTablero }
+export { ContenedorTablero }

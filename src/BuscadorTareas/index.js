@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import './BuscadorTareas.css';
-import react from 'react';
+import { TareaContext } from "../TareaContext";
 
-function BuscadorTareas({
+import './BuscadorTareas.css';
+
+function BuscadorTareas()  {
+const {
     valorBuscador,
     setValorBuscador,
-    }) 
+  } = React.useContext(TareaContext);
 
-{
 
     return (
     <input 
