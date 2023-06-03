@@ -3,4 +3,10 @@
     padding: 0px;
     list-style: none; /* ocultar los puntos */
     width: 100%;
+
+    
+}
+
+img {
+    width: 30%;
 }

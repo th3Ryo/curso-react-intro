@@ -87,6 +87,20 @@ function TareaProvider ({children}) {
     guardarTareas(nuevaTarea)
   }
 
+  /**
+   * !Agregar tarea
+   * */
+
+  const agregarTarea = (texto) => {
+    const nuevaTarea = [...tarea]
+    nuevaTarea.push({
+      texto,
+      completada: undefined,
+    })
+    guardarTareas(nuevaTarea);
+  }
+
+
 
     return (
         <TareaContext.Provider value={{
@@ -104,6 +118,7 @@ function TareaProvider ({children}) {
           setValorBuscador,
           abrirModalTarea, 
           setAbrirModalTarea,
+          agregarTarea,
         }}>
           {children}
         </TareaContext.Provider>

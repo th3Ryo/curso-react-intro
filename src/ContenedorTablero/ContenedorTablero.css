@@ -7,11 +7,18 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 32px;
     margin: 0;
     padding: 12px;
     text-align: center;
 
+}
+
+h3{
+  text-justify: center;
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
 }
 
 .contenedor {
@@ -22,6 +29,16 @@ h2 {
     margin: 2rem;
 
 }
+
+.contenedorInterno{
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+
+
 
 section:first-of-type{
   
@@ -37,14 +54,15 @@ section:last-of-type{
   margin: 0px 0px 1rem 0px;
 
 }
-section div:nth-child(1) {
+section .porHacer {
   background-color: #6EA0AC;
 }
 
-section div:nth-child(2) {
+
+section .haciendo {
   background-color: #548FA2;
 }
-section div:nth-child(3) {
+section .hecho {
   background-color: #3E7F98;
 }
 
@@ -54,14 +72,25 @@ h2 span{
 }
 
 .logo {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.imagenesVacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 376px) {
-    .contenedor:first-of-type{
+    section:first-of-type{
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -69,7 +98,7 @@ h2 span{
       
     }
 
-    .contenedor:last-of-type{
+    section:last-of-type{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,6 +107,13 @@ h2 span{
         padding: 5px;
         
       }
+
+      .contenedor {
+        
+        width: 90vw;
+        margin: 2rem;
+    
+    }
 
       img {
         width: 80%;

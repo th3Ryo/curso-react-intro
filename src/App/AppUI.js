@@ -9,12 +9,18 @@ import { BuscadorTareas } from "../BuscadorTareas";
 import { ContenedorTarea } from "../ContenedorTarea";
 import { ContenedorBoton } from "../ContenedorBoton";
 
-import { TareaContext } from "../TareaContext";
 import { CargandoTareas } from "../CargandoTareas";
 import { ErrorTareas } from "../ErrorTareas";
 import { CrearTareas } from "../CrearTareas";
 import { Modal } from "../Modal";
+import { TareaForms } from "../TareaForms";
 
+import porHacer from "../img/porhacer.png"
+import haciendo from "../img/haciendotarea.png"
+import hecho from "../img/tareahecha.png"
+
+
+import { TareaContext } from "../TareaContext";
 
 function AppUI() {
   const {
@@ -48,7 +54,7 @@ function AppUI() {
         />
         {abrirModalTarea && (
           <Modal>
-          el modal esta aki
+            <TareaForms/>
           </Modal>
         )}
       </section>
@@ -57,7 +63,14 @@ function AppUI() {
             <ContenedorPorHacer>
               {loading && <CargandoTareas />}
               {error && <ErrorTareas />}
-              {!loading && buscadorTareas.length == 0 && <CrearTareas />}
+              {!loading && buscadorTareas.length === 0 && (
+                <>
+                  <div className="imagenesVacio">
+                    <img src={porHacer} alt="por Hacer" />
+                  </div>
+                  <CrearTareas />
+                </>
+              )}
 
               {tareasUndefined.map((todo) => (
                 <ContenedorTarea
@@ -75,8 +88,14 @@ function AppUI() {
             <ContenedorHaciendo>
               {loading && <CargandoTareas />}
               {error && <ErrorTareas />}
-              {!loading && buscadorTareas.length == 0 && <CrearTareas />}
-
+              {!loading && buscadorTareas.length === 0 && (
+                <>
+                  <div className="imagenesVacio">
+                    <img src={haciendo} alt="por Hacer" />
+                  </div>
+                  <CrearTareas />
+                </>
+              )}
               {tareasHaciendo.map((todo) => (
                 /* este tiene de funcionanr como identificador key={todo.texto} y este se va a enviar como promps a  contenedor tarea textoTarea={todo.texto} */
                 <ContenedorTarea
@@ -93,7 +112,14 @@ function AppUI() {
             <ContenedorHecho>
               {loading && <CargandoTareas />}
               {error && <ErrorTareas />}
-              {!loading && buscadorTareas.length == 0 && <CrearTareas />}
+              {!loading && buscadorTareas.length === 0 && (
+                <>
+                  <div className="imagenesVacio">
+                    <img src={hecho} alt="por Hacer" />
+                  </div>
+                  <CrearTareas />
+                </>
+              )}
 
               {tareasHechas.map((todo) => (
                 /* este tiene de funcionanr como identificador key={todo.texto} y este se va a enviar como promps a  contenedor tarea textoTarea={todo.texto} */
