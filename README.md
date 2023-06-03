@@ -1,12 +1,16 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Curso de Introducción a React.js
 
-¡Hola, Platzinauta!
+¡Bienvenido(a) al Curso de Introducción a React.js!
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+Este repositorio contiene el código correspondiente a todas las clases del curso. Aquí encontrarás ejemplos, ejercicios y mi version del proyecto que me ayudaron a aprender React.js de manera práctica.
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+https://th3ryo.github.io/curso-react-intro/
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+## Objetivo del curso
+
+El objetivo principal de este curso es proporcionarte los conocimientos fundamentales de React.js y familiarizarte con su ecosistema. A lo largo del curso, aprendi los conceptos básicos de React y cómo utilizarlos para crear aplicaciones web interactivas y de alto rendimiento. 
+
+
 
 ## Getting Started with Create React App
 
