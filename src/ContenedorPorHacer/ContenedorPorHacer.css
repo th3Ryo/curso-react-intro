@@ -7,6 +7,12 @@
     
 }
 
-img {
-    width: 30%;
+.lista img {
+    width: 40%;
 }
+
+@media (max-width: 376px) {
+    .lista img {
+        width: 100%;
+    }
+  }

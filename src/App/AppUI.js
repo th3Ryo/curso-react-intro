@@ -67,6 +67,7 @@ function AppUI() {
                 <>
                   <div className="imagenesVacio">
                     <img src={porHacer} alt="por Hacer" />
+                    <a href="https://www.freepik.es/autor/stories" hidden>Imagen de storyset en Freepik</a> 
                   </div>
                   <CrearTareas />
                 </>
@@ -92,6 +93,7 @@ function AppUI() {
                 <>
                   <div className="imagenesVacio">
                     <img src={haciendo} alt="por Hacer" />
+                    <a href="https://www.freepik.es/autor/stories" hidden>Imagen de storyset en Freepik</a> 
                   </div>
                   <CrearTareas />
                 </>
@@ -116,6 +118,7 @@ function AppUI() {
                 <>
                   <div className="imagenesVacio">
                     <img src={hecho} alt="por Hacer" />
+                    <a href="https://www.freepik.es/autor/stories" hidden>Imagen de storyset en Freepik</a> 
                   </div>
                   <CrearTareas />
                 </>
